@@ -1,0 +1,39 @@
+
+
+<div class="container ">
+  <div class="row ">
+<!-- <h1>Total price {{}}</h1> -->
+
+@for(item of ProductList ; track item.id){
+ <div class="col-4">
+
+    <div class="card" >
+        <img [src]="item.productImgUrl" class="card-img-top"  alt="" srcset="">
+         <div class="card-body">
+          <h5 class="card-title">{{ item.productName }}</h5>
+          <p class="card-text">{{item.productDetails}}</p>
+          <p class="card-text">q: {{ item.productQuantity }}</p>
+          <p class="card-text">price: {{ item.productPrice }}</p>
+          <div class="d-flex justify-content-between">
+@switch(item.productQuantity){
+    @case (0)
+    { <p> out of stock</p>}
+
+    @case (1){
+        <p>last item</p>
+    }
+    @default{
+        <p>available</p>
+    }
+}
+<button class="btn btn-primary " [disabled]="item.productQuantity == 0"  (click)="countQty(item)"> add to cart </button>
+
+</div>
+
+    </div>
+    </div>
+    </div>
+}
+
+</div>
+    </div>
