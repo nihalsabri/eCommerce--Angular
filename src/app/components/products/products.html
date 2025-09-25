@@ -1,5 +1,3 @@
-
-
 <div class="container ">
   <div class="row ">
 <!-- <h1>Total price {{}}</h1> -->
@@ -7,7 +5,7 @@
 @for(item of ProductList ; track item.id){
  <div class="col-4">
 
-    <div class="card" >
+    <div class="Card"   appCardStyle  >
         <img [src]="item.productImgUrl" class="card-img-top"  alt="" srcset="">
          <div class="card-body">
           <h5 class="card-title">{{ item.productName }}</h5>
@@ -17,13 +15,13 @@
           <div class="d-flex justify-content-between">
 @switch(item.productQuantity){
     @case (0)
-    { <p> out of stock</p>}
+    { <p [ngStyle]="{'color': (item.productQuantity == 0) ? 'red' : 'black'}"> out of stock</p>}
 
     @case (1){
-        <p>last item</p>
+        <p  [ngClass]="{'last-item': item.productQuantity == 1}" >last item</p>
     }
     @default{
-        <p>available</p>
+        <p [style.color]="(item.productQuantity == 0) ? 'black' : 'green'">available</p>
     }
 }
 <button class="btn btn-primary " [disabled]="item.productQuantity == 0"  (click)="countQty(item)"> add to cart </button>
@@ -34,6 +32,8 @@
     </div>
     </div>
 }
+
+
 
 </div>
     </div>

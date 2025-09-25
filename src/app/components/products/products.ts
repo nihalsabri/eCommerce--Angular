@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { Iproducts } from '../../models/iproducts';
+import {CardStyle} from '../../directives/card-style'
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-products',
-  imports: [],
+  imports: [FormsModule,CommonModule,CardStyle],
   templateUrl: './products.html',
   styleUrl: './products.css'
 })
@@ -59,7 +62,6 @@ export class Products {
   }
 ];
     
-
   }
 
 

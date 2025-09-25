@@ -1,0 +1,11 @@
+.out-of-stock {
+  color: red;
+}
+
+.in-stock {
+  color: green;
+}
+
+.last-item {
+  color: orange;
+}
