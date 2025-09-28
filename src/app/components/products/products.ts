@@ -12,8 +12,13 @@ import { FormsModule } from '@angular/forms';
 export class Products {
 // prop  
   ProductList!: Iproducts[];
+    filteredProducts: Iproducts[] = [];
 
+set filterByname (value:string){
+  this.doSearch(value);
+}
   constructor(){
+    
       this.ProductList = [
   {
     id: 1,
@@ -61,9 +66,14 @@ export class Products {
     productDetails: 'Portfolio and agency theme with stunning animations, multiple layout options, and premium plugins included. Perfect for creative professionals and agencies.'
   }
 ];
-    
+    this.filteredProducts = this.ProductList;
+ 
   }
-
+doSearch(valueSearch:string) : Iproducts[]{
+  valueSearch= valueSearch.toLowerCase();
+  
+ return this.filteredProducts = this.ProductList.filter((i:Iproducts)=>i.productName.toLowerCase().includes(valueSearch))
+}
 
   // methods
   countQty(item:any){
