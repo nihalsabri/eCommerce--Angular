@@ -1,20 +1,21 @@
 <div class="container ">
     
 
-    <input [(ngModel)]="filterByname" class="form-control" placeholder="write Name Filter">
-  <div class="row ">
+    <!-- <input [(ngModel)]="filterByname" class="form-control" placeholder="write Name Filter"> -->
+  <div class="row d-flex flex-wrap ">
 <!-- <h1>Total price {{}}</h1> -->
 
 @for(item of filteredProducts  ; track item.id){
- <div class="col-4">
+ <div class="col-md-4 col-sm-6 mb-4">
 
     <div class="Card"   appCardStyle  >
-        <img [src]="item.productImgUrl" class="card-img-top"  alt="" srcset="">
+        <img [src]="item.productImgUrl" class="card-img-top"  [routerLink]="['/products/',item.id]"   alt="" srcset="">
          <div class="card-body">
           <h5 class="card-title">{{ item.productName }}</h5>
           <p class="card-text">{{item.productDetails}}</p>
+          <!-- <p class="card-text">{{`new Date()}}</p> -->
           <p class="card-text">q: {{ item.productQuantity }}</p>
-          <p class="card-text">price: {{ item.productPrice }}</p>
+          <p class="card-text">price: {{ item.productPrice | currency}}</p>
           <div class="d-flex justify-content-between">
 @switch(item.productQuantity){
     @case (0)
@@ -27,7 +28,7 @@
         <p [style.color]="(item.productQuantity == 0) ? 'black' : 'green'">available</p>
     }
 }
-<button class="btn btn-primary " [disabled]="item.productQuantity == 0"  (click)="countQty(item)"> add to cart </button>
+<button class="btn btn-primary " [disabled]="item.productQuantity == 0"  (click)="addToCartChild(item)"  (click)="countQty(item)"> add to cart </button>
 
 </div>
 

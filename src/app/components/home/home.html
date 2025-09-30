@@ -1,1 +1,32 @@
-<p>home works!</p>
+
+<input [(ngModel)]="filterBynameHome" class="form-control" placeholder="Search with name">
+
+<app-products  (ProductEvent)="addToCartParent($event)" [filterByname]="filterBynameHome" ></app-products>
+<h1>Cart</h1>
+<div class="d-flex">
+<p>your credit card info</p>
+<p>{{"1234567812341234" | cardNum}}</p>
+</div>
+
+<table class="table table-striped">
+  <thead>
+      <th scope="col">Product Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Qunatity</th>
+      <th scope="col">Date</th>
+    <th scope="col"> Action
+    </th>
+
+  </thead>
+<tbody>
+ @for(i of ProductList ; track i.id){
+           <tr>
+            <td>{{i.productName}}</td>
+            <td>{{i.productPrice}}</td>
+            <td>{{i.productQuantity}}</td>
+        <td>{{Ddate | date :'short'}}</td>
+            <td> <button (click)="Dec(i)">decrease</button></td>
+
+        </tr>   }
+</tbody>
+  </table>

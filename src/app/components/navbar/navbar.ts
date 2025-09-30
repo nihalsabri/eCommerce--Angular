@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import {Store} from '../../models/store';
+import { RouterLink, RouterLinkActive, RouterModule } from "@angular/router"; // double check here : improt from @angular/router
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  imports: [RouterLink,RouterLinkActive,RouterModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
 })
