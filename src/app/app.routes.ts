@@ -36,6 +36,7 @@ export const routes: Routes = [
   {path:'contact', component:Contact,title : "Contact Us"},
   {path:'products/:idFromUrl' , component:ProductDetails , title:"Products Details"
   }
+  
   ]},
   {path:'**',component:NoPage,title:"Not Found"}
 ];
