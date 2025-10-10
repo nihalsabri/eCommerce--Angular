@@ -1,3 +1,8 @@
+<div class="container">
+
+  <button class="btn btn-success" [disabled]="propIsUserLogged" (click)="login()">login</button>
+  <button class="btn btn-danger"  [disabled]="!propIsUserLogged" (click)="logout()">login</button>
+
 
 <input [(ngModel)]="filterBynameHome" class="form-control" placeholder="Search with name">
 
@@ -29,3 +34,5 @@
         </tr>   }
 </tbody>
   </table>
+
+  </div>

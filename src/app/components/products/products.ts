@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 import { ProductWithApi } from '../../services/product-with-api';
 @Component({
   selector: 'app-products',
-  imports: [FormsModule,CommonModule,CardStyle,CurrencyPipe,DatePipe,RouterModule],
+  imports: [FormsModule,CommonModule,CardStyle,CurrencyPipe,RouterModule],
   templateUrl: './products.html',
   styleUrl: './products.css'
 })

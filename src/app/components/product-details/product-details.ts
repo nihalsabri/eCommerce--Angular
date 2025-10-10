@@ -26,27 +26,55 @@ constructor( private router:Router,
   // this.currentID = Number(this.active.snapshot.paramMap.get('idFromUrl'))
   //routing observable
   this.active.params.subscribe((x)=>{
-    this.currentID =+(x['idFromUrl'])
-    // this.product=this.productStaticServ.getProductById(this.currentID)
+this.currentID = Number(x['idFromUrl'])
+//     // this.product=this.productStaticServ.getProductById(this.currentID)
 this.prdWithApi.getProductById(this.currentID).subscribe((data)=> { 
   this.product=data
   this.cd.detectChanges()
   console.log(this.product);
+
   
 })
   })
-  console.log(this.currentID);
+
+  }
+
+//  ngOnInit(): void {
+//   this.loadProductIds();
+// }
+//   loadProductIds(): void {
+//   this.prdWithApi.allIds().subscribe({
+//     next: (ids) => {
+//       this.arrayOfIDsProp = ids;
+//       console.log('Available IDs:', this.arrayOfIDsProp);
+//               this.updateIndex();
+
+//     },
+//     error: (error) => {
+//       console.error('Error loading product IDs:', error);
+//     }
+//   });
+// }
   
 // this.product=this.productStaticServ.getProductById(this.currentID)
 //   console.log(this.productStaticServ.getProductById(this.currentID));
   
-  this.arrayOfIDsProp = this.productStaticServ.allIds()
-  console.log(  this.arrayOfIDsProp);
-  
+  // this.arrayOfIDsProp = this.productStaticServ.allIds()
 
-}
 
 //method
+
+ngOnInit(): void {
+  this.prdWithApi.allIds().subscribe({
+    next: (ids) => {
+      this.arrayOfIDsProp = ids;
+      console.log('Available IDs:', this.arrayOfIDsProp);
+    },
+    error: (error) => {
+      console.error('Error loading product IDs:', error);
+    }
+  });
+}
 goBack(){
 this.locate.back()
 }
