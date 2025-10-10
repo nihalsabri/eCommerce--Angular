@@ -73,4 +73,9 @@ this.productPropInService =  [
 getProductById(id:number): Iproducts | undefined {
   return this.productPropInService.find((prd:Iproducts)=>prd.id==id)
 }
+
+// method array of ids 
+allIds():number[]{
+  return this.productPropInService.map((prd:Iproducts)=>prd.id)
+}
 }

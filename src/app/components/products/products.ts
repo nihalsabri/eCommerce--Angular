@@ -1,28 +1,24 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Iproducts } from '../../models/iproducts';
 import {CardStyle} from '../../directives/card-style'
 import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ProductStatic } from '../../services/product-static';
 import { RouterModule } from '@angular/router';
+import { ProductWithApi } from '../../services/product-with-api';
 @Component({
   selector: 'app-products',
-  imports: [FormsModule,CommonModule,CardStyle,CurrencyPipe,DatePipe,RouterModule],
+  imports: [FormsModule,CommonModule,CardStyle,CurrencyPipe,RouterModule],
   templateUrl: './products.html',
   styleUrl: './products.css'
 })
-export class Products {
+export class Products implements OnInit {
 // prop  
   ProductList!: Iproducts[];
     filteredProducts: Iproducts[] = [];
-//get value from parent 
-@Input() set filterByname (value:string){
-     this.filteredProducts = this.staticPrdserv.doSearch(value);//update search feature 
-}
-
 
 // applying injection static service 
-  constructor(public staticPrdserv: ProductStatic){
+  constructor(private cd:ChangeDetectorRef,private prdWithApi:ProductWithApi,public staticPrdserv: ProductStatic){
     
 //       this.ProductList = [
 //   {
@@ -72,11 +68,36 @@ export class Products {
 //   }
 // ];
 
-this.ProductList = this.staticPrdserv.getAllProducts();
-    this.filteredProducts = this.ProductList;
+//observer
+// this.prdWithApi.getAllProducts().subscribe((data)=>{
+//   console.log(data);
+//   this.cd.detectChanges()// zone js to load prd info fast
+//     this.ProductList=data;
+//  console.log(this.ProductList);
+// }
+// )
+// //static 
+// // this.ProductList = this.staticPrdserv.getAllProducts();
+// //api data
+
+//     this.filteredProducts = this.ProductList;
+//  console.log(this.ProductList);
  
+ 
+  }
 
+  ngOnInit(): void {
+    this.prdWithApi.getAllProducts().subscribe((data)=>{
+  console.log(data);
+    this.ProductList=data;
+      this.cd.detectChanges()// zone js to load prd info fast
+ console.log(this.ProductList);
+ 
+    this.filteredProducts = this.ProductList; 
 
+}
+)
+    
   }
 // doSearch(valueSearch:string) : Iproducts[]{
 //   valueSearch= valueSearch.toLowerCase();
@@ -89,9 +110,22 @@ this.ProductList = this.staticPrdserv.getAllProducts();
   countQty(item:any){
   item.productQuantity--;
   }
+
+  //get value from parent 
+@Input() set filterByname (value:string){
+//     this.filteredProducts = this.staticPrdserv.doSearch(value);//update search feature 
+this.prdWithApi.getAllProducts().subscribe(
+  { next: (data)=>{
+this.filteredProducts= data.filter((prd:Iproducts)=>prd.productName.toLocaleLowerCase().includes(value)) ;
+  this.cd.detectChanges()// zone js to load prd info fast 
+
+}})
+
+}
 @Output() ProductEvent:EventEmitter <Iproducts> = new EventEmitter <Iproducts>()
 
   addToCartChild(prd:Iproducts){
      this.ProductEvent.emit(prd)
   }
 }
+

@@ -1,0 +1,159 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "productName": "Avada - Responsive Multi-Purpose Theme",
+      "productImgUrl": "/assets/image2.png",
+      "productQuantity": 15,
+      "productPrice": 60,
+      "categoryId": 1,
+      "productDetails": "The most popular WordPress theme with drag & drop builder, responsive design, and unlimited customization options. Perfect for business, portfolio, and e-commerce websites."
+    },
+    {
+      "id": 2,
+      "productName": "Divi - Elegant WordPress Theme",
+      "productImgUrl": "/assets/image.png",
+      "productQuantity": 25,
+      "productPrice": 89,
+      "categoryId": 1,
+      "productDetails": "Visual page builder with front-end editing, 800+ pre-made designs, and responsive modules. Ideal for agencies and freelancers building professional websites."
+    },
+    {
+      "id": 3,
+      "productName": "BeTheme - Responsive Multi-Purpose WordPress Theme",
+      "productImgUrl": "/assets/image3.png",
+      "productQuantity": 0,
+      "productPrice": 59,
+      "categoryId": 1,
+      "productDetails": "600+ pre-built websites, Muffin Builder included, WooCommerce compatible. One of the biggest WordPress themes with extensive customization options."
+    },
+    {
+      "id": 4,
+      "productName": "Shopify Dawn - Modern E-commerce Template",
+      "productImgUrl": "/assets/image4.png",
+      "productQuantity": 12,
+      "productPrice": 45,
+      "categoryId": 2,
+      "productDetails": "Clean and modern Shopify theme optimized for speed and conversions. Features product filtering, mega menu, and mobile-first design approach."
+    },
+    {
+      "id": 5,
+      "productName": "Kalium - Creative Theme for Professionals",
+      "productImgUrl": "/assets/image.png",
+      "productQuantity": 18,
+      "productPrice": 59,
+      "categoryId": 3,
+      "productDetails": "Portfolio and agency theme with stunning animations, multiple layout options, and premium plugins included. Perfect for creative professionals and agencies."
+    },
+    {
+      "id": 6,
+      "productName": "production",
+      "productImgUrl": "",
+      "categoryId": 2,
+      "productDetails": "",
+      "productQuantity": 1,
+      "productPrice": 11
+    },
+    {
+      "id":7,
+      "productName": "wordpress Template",
+      "productImgUrl": "https://blog.mailvio.com/wp-content/uploads/2022/02/Image-3_v_001-15.png",
+      "categoryId": 8,
+      "productDetails": "",
+      "productQuantity": 6,
+      "productPrice": 7
+    },
+
+    {
+      "id": 1760093339199,
+      "productName": "wordpress Template",
+      "productPrice": 777777,
+      "categoryId": 1,
+      "productDetails": "wordpress Template",
+      "productQuantity": 4,
+      "productImgUrl": "https://blog.mailvio.com/wp-content/uploads/2022/02/Image-3_v_001-15.png"
+    }
+  ],
+  "users": [
+    {
+      "id": "a893",
+      "fname": "ali",
+      "lname": "ahmed",
+      "email": "example@gmail.com",
+      "password": "12345",
+      "address": "cairo"
+    },
+    {
+      "id": "14c5",
+      "fname": "Niha",
+      "lname": "aaa",
+      "email": "hh@gggg.com",
+      "address": "giza",
+      "password": "12345"
+    },
+    {
+      "id": "23aa",
+      "fname": "Niha",
+      "lname": "aaa",
+      "email": "hh@gggg.com",
+      "address": "giza",
+      "password": "12345"
+    },
+    {
+      "id": "200e",
+      "fname": "Niha",
+      "lname": "aaa",
+      "email": "hh@gggg.com",
+      "password": "123456"
+    },
+    {
+      "id": "203b",
+      "fname": "am",
+      "lname": "aaa",
+      "email": "hh@gggg.com",
+      "password": "123456"
+    },
+    {
+      "id": "171f",
+      "fname": "AmiraAH",
+      "lname": "med",
+      "email": "amirah@gggg.com",
+      "password": "123456"
+    },
+    {
+      "id": "0117",
+      "fname": "Niha",
+      "lname": "aaa",
+      "email": "hh@gggg.com",
+      "password": "12345"
+    },
+    {
+      "id": "0c38",
+      "fname": "Niha",
+      "lname": "aaa",
+      "email": "hh@gggg.com",
+      "password": "12345"
+    },
+    {
+      "id": "db6e",
+      "fname": "Niha",
+      "lname": "aaa11",
+      "email": "hh11@gggg.com",
+      "password": "12345"
+    },
+    {
+      "id": "4e92",
+      "fname": "Niha",
+      "lname": "aaa",
+      "email": "hh11@gggg.com",
+      "password": "12345"
+    },
+    {
+      "id": "b3b7",
+      "fname": "Niha",
+      "lname": "aaa",
+      "email": "hh11@gggg.com",
+      "password": "12345"
+    }
+  ]
+}
