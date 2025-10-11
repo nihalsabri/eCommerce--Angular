@@ -3,6 +3,7 @@ import { Sidebar } from '../sidebar/sidebar';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { Iproducts } from '../../models/iproducts';
 
 @Component({
   selector: 'app-home-layout',
@@ -11,5 +12,6 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './home-layout.css'
 })
 export class HomeLayout {
+
 
 }

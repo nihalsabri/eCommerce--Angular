@@ -19,7 +19,7 @@
           <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
         </li>
            <li class="nav-item">
-          <a class="nav-link" routerLink="/addproduct" routerLinkActive="active">Add New Product</a>
+          <a class="nav-link" routerLink="/products/add" routerLinkActive="active">Add New Product</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
@@ -33,6 +33,16 @@
           <button class="nav-link" [hidden]="!userState"> Logout</button>
         </li>
       </ul>
+
     </div>
+ <a class="btn btn-outline-primary position-relative" [routerLink]="['/cart']">
+  <i class="fas fa-shopping-cart"></i>
+      <!-- @if (getCartItemCount() > 0) {
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {{getCartItemCount()}} -->
+        <!-- </span>
+      } -->
+    </a>
+    
   </div>
 </nav>

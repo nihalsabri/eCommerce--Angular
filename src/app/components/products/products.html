@@ -1,25 +1,38 @@
-<div class="container ">
-    
 
-    <!-- <input [(ngModel)]="filterByname" class="form-control" placeholder="write Name Filter"> -->
-  <div class="row d-flex flex-wrap ">
-<!-- <h1>Total price {{}}</h1> -->
 
-@for(item of filteredProducts  ; track item.id){
- <div class="col-md-4 col-sm-6 mb-4">
+    <div class="container-fluid p-3 ">
+  <div class="row d-flex flex-wrap g-3">
+    @for(item of filteredProducts; track item.id){
+      <div class="col-12 mb-3">
+        <div class="card shadow-sm" >
+          <div class="row g-0">
+ 
+            <div class="col-md-4">
+              <img 
+                [src]="item.productImgUrl" 
+                class="img-fluid rounded-start h-100 w-100" 
+                [routerLink]="['/products/',item.id]"
+                alt="" 
+                style="cursor: pointer; object-fit: cover;">
+            </div>
+            
 
-    <div class="Card"   appCardStyle  >
-        <img [src]="item.productImgUrl" class="card-img-top"  [routerLink]="['/products/',item.id]"   alt="" srcset="">
-         <div class="card-body">
-          <h5 class="card-title">{{ item.productName }}</h5>
-          <p class="card-text">{{item.productDetails}}</p>
-          <!-- <p class="card-text">{{`new Date()}}</p> -->
-          <p class="card-text">q: {{ item.productQuantity }}</p>
-          <p class="card-text">price: {{ item.productPrice | currency}}</p>
-          <div class="d-flex justify-content-between">
-@switch(item.productQuantity){
+            <div class="col-md-8">
+              <div class="card-body d-flex flex-column h-100">
+                <div class="row">
+                  <div class="col-md-8">
+                    <h5 class="card-title">{{ item.productName }}</h5>
+                    <p class="card-text text-muted">{{ item.productDetails }}</p>
+                  </div>
+                  
+                  <div class="col-md-4 text-center">
+                    <h3 class="text-primary fw-bold">{{ item.productPrice | currency }}</h3>
+                    <p class="card-text text-muted mb-1">Qty :{{ item.productQuantity }}</p>
+                    
+                 @switch(item.productQuantity){
     @case (0)
     { <p [ngStyle]="{'color': (item.productQuantity == 0) ? 'red' : 'black'}"> out of stock</p>}
+
 
     @case (1){
         <p  [ngClass]="{'last-item': item.productQuantity == 1}" >last item</p>
@@ -28,16 +41,19 @@
         <p [style.color]="(item.productQuantity == 0) ? 'black' : 'green'">available</p>
     }
 }
-<button class="btn btn-primary " [disabled]="item.productQuantity == 0"  (click)="addToCartChild(item)"  (click)="countQty(item)"> add to cart </button>
 
+                    <button 
+                      class="btn btn-outline-primary btn-sm " 
+                      [disabled]="item.productQuantity == 0"  
+                      (click)="addToCartChild(item); countQty(item)">
+add to cart                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
 </div>
-
-    </div>
-    </div>
-    </div>
-}
-
-
-
-</div>
-    </div>

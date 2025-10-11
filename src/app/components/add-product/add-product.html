@@ -1,3 +1,4 @@
+<!-- <h2>{{ isEditMode ? ' Update Product' : 'Add new product' }}</h2>
 
 <form class="form-horizontal" (ngSubmit)="onSubmit()" [formGroup]="productForm">
       <div class="form-group">
@@ -96,7 +97,126 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Submit</button>
+ <button type="submit" [disabled]="isSubmitting">
+    {{ isEditMode ? 'Save changes' : 'ِAdd product' }}
+  </button>    </div>
+  </div>
+</form> -->
+<div class="container mt-4">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      <h2 class="mb-0">{{ isEditMode ? 'Update Product' : 'Add New Product' }}</h2>
+    </div>
+    <div class="card-body">
+      <form class="row g-3" (ngSubmit)="onSubmit()" [formGroup]="productForm">
+        
+        <!-- Product Name -->
+        <div class="col-md-6">
+          <label for="productName" class="form-label">Product Name</label>
+          <input type="text" 
+                 class="form-control" 
+                 id="productName" 
+                 formControlName="productName"
+                 placeholder="Enter product name">
+          @if (hasError('productName', 'required')) {
+            <div class="text-danger small mt-1">Product name is required</div>
+          }
+          @if (hasError('productName', 'minlength')) {
+            <div class="text-danger small mt-1">Name should be at least 3 letters</div>
+          }
+        </div>
+
+        <!-- Product Image URL -->
+        <div class="col-md-6">
+          <label for="productImgUrl" class="form-label">Product Image URL</label>
+          <input type="url" 
+                 class="form-control" 
+                 id="productImgUrl" 
+                 formControlName="productImgUrl"
+                 placeholder="https://example.com/image.jpg">
+          @if (hasError('productImgUrl', 'pattern')) {
+            <div class="text-danger small mt-1">Please enter a valid image URL (jpg, jpeg, png, gif, webp, svg)</div>
+          }
+        </div>
+
+        <!-- Product Quantity -->
+        <div class="col-md-6">
+          <label for="productQuantity" class="form-label">Quantity</label>
+          <input type="number" 
+                 class="form-control" 
+                 id="productQuantity" 
+                 formControlName="productQuantity"
+                 placeholder="0" 
+                 min="0">
+          @if (hasError('productQuantity', 'required')) {
+            <div class="text-danger small mt-1">Quantity is required</div>
+          }
+          @if (hasError('productQuantity', 'min')) {
+            <div class="text-danger small mt-1">Quantity must be greater than or equal to 0</div>
+          }
+        </div>
+
+        <!-- Product Price -->
+        <div class="col-md-6">
+          <label for="productPrice" class="form-label">Price ($)</label>
+          <input type="number" 
+                 class="form-control" 
+                 id="productPrice" 
+                 formControlName="productPrice"
+                 placeholder="0.00" 
+                 step="0.01" 
+                 min="0">
+          @if (hasError('productPrice', 'required')) {
+            <div class="text-danger small mt-1">Price is required</div>
+          }
+          @if (hasError('productPrice', 'min')) {
+            <div class="text-danger small mt-1">Price must be greater than or equal to 0</div>
+          }
+        </div>
+
+        <!-- Category ID -->
+        <div class="col-md-6">
+          <label for="categoryId" class="form-label">Category ID</label>
+          <input type="number" 
+                 class="form-control" 
+                 id="categoryId" 
+                 formControlName="categoryId"
+                 placeholder="Enter category ID" 
+                 min="1">
+          @if (hasError('categoryId', 'required')) {
+            <div class="text-danger small mt-1">Category is required</div>
+          }
+          @if (hasError('categoryId', 'min')) {
+            <div class="text-danger small mt-1">Category must be 1 or more</div>
+          }
+        </div>
+
+        <!-- Product Details -->
+        <div class="col-12">
+          <label for="productDetails" class="form-label">Product Details</label>
+          <textarea class="form-control" 
+                    id="productDetails" 
+                    formControlName="productDetails"
+                    placeholder="Enter product details"
+                    rows="3"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="col-12">
+          <div class="d-flex gap-2">
+            <button type="submit" 
+                    class="btn btn-success" 
+                    [disabled]="isSubmitting">
+              <span *ngIf="isSubmitting" class="spinner-border spinner-border-sm me-2"></span>
+              {{ isEditMode ? 'Save Changes' : 'Add Product' }}
+            </button>
+            <!-- <button type="button" class="btn btn-outline-secondary" (click)="onCancel()">
+              Cancel
+            </button> -->
+          </div>
+        </div>
+
+      </form>
     </div>
   </div>
-</form>
+</div>

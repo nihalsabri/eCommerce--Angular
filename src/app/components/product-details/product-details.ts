@@ -3,7 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Iproducts } from '../../models/iproducts';
 import { ProductStatic } from '../../services/product-static';
 import { Location } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { NotificationService } from '../../services/notification';
 import { ProductWithApi } from '../../services/product-with-api';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog';
 @Component({
   selector: 'app-product-details',
   imports: [],
@@ -21,7 +24,9 @@ myIndex:number= 0
 constructor( private router:Router,
    private prdWithApi:ProductWithApi,
   private locate:Location ,public active:ActivatedRoute ,
-   private productStaticServ:ProductStatic ,
+   private productStaticServ:ProductStatic ,  
+   private dialog: MatDialog,
+private notificationService: NotificationService,
   private cd:ChangeDetectorRef){
   // this.currentID = Number(this.active.snapshot.paramMap.get('idFromUrl'))
   //routing observable
@@ -96,4 +101,39 @@ console.log(this.arrayOfIDsProp.indexOf(this.currentID));
 this.router.navigate(['/products/', this.arrayOfIDsProp[++this.myIndex]])
 
 }
+
+
+doEdit(){
+  this.router.navigate(['/products/edit',this.currentID])
+
+}
+
+doDelete() {
+  const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+    data: {
+      title: 'Confirm Delete action',
+      message: `Are you sure to delete "${this.product?.productName}"؟`
+    }
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    if (result === true) {
+      this.prdWithApi.deleteProduct(this.currentID).subscribe({
+        next: () => {
+          // alert('Product deleted successfully ');
+                    this.notificationService.showSuccess('Product deleted successfully! ✓');
+
+          this.router.navigate(['/products']);
+        },
+        error: (err) => {
+          console.error('Error while deleting:', err);
+          // alert('Error Happens');
+                    this.notificationService.showError('Error Happens!');
+
+        }
+      });
+    }
+  });
+}
+
 }

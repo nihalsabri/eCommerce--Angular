@@ -1,13 +1,25 @@
 <div class="container">
 
   <button class="btn btn-success" [disabled]="propIsUserLogged" (click)="login()">login</button>
-  <button class="btn btn-danger"  [disabled]="!propIsUserLogged" (click)="logout()">login</button>
-
-
+  <button class="btn btn-danger"  [disabled]="!propIsUserLogged" (click)="logout()">logout</button>
+<div class="hero-section bg-light py-5 mb-4">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <h1 class="display-5 fw-bold text-dark mb-3">
+          Professional WordPress Themes & Website Templates for any project
+        </h1>
+        <p class="lead text-muted fs-5">
+          Discover thousands of easy to customize themes, templates & CMS products, made by world-class developers.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 <input [(ngModel)]="filterBynameHome" class="form-control" placeholder="Search with name">
 
 <app-products  (ProductEvent)="addToCartParent($event)" [filterByname]="filterBynameHome" ></app-products>
-<h1>Cart</h1>
+<!-- <h1>Cart</h1>
 <div class="d-flex">
 <p>your credit card info</p>
 <p>{{"1234567812341234" | cardNum}}</p>
@@ -33,6 +45,6 @@
 
         </tr>   }
 </tbody>
-  </table>
+  </table> -->
 
   </div>

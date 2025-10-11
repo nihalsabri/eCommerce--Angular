@@ -1,77 +1,76 @@
 {
   "products": [
     {
-      "id": 1,
       "productName": "Avada - Responsive Multi-Purpose Theme",
-      "productImgUrl": "/assets/image2.png",
-      "productQuantity": 15,
       "productPrice": 60,
-      "categoryId": 1,
-      "productDetails": "The most popular WordPress theme with drag & drop builder, responsive design, and unlimited customization options. Perfect for business, portfolio, and e-commerce websites."
+      "categoryId": 5,
+      "productDetails": "The most popular WordPress theme with drag & drop builder, responsive design, and unlimited customization options.",
+      "productQuantity": 3,
+      "productImgUrl": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop",
+      "id": "1"
     },
     {
-      "id": 2,
       "productName": "Divi - Elegant WordPress Theme",
-      "productImgUrl": "/assets/image.png",
-      "productQuantity": 25,
-      "productPrice": 89,
+      "productPrice": 1000,
       "categoryId": 1,
-      "productDetails": "Visual page builder with front-end editing, 800+ pre-made designs, and responsive modules. Ideal for agencies and freelancers building professional websites."
+      "productDetails": "Visual page builder with front-end editing, 800+ pre-made designs, and responsive modules.",
+      "productQuantity": 25,
+      "productImgUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+      "id": "2"
     },
     {
-      "id": 3,
+      "id": "3",
       "productName": "BeTheme - Responsive Multi-Purpose WordPress Theme",
-      "productImgUrl": "/assets/image3.png",
+      "productImgUrl": "https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&h=400&fit=crop",
       "productQuantity": 0,
       "productPrice": 59,
       "categoryId": 1,
-      "productDetails": "600+ pre-built websites, Muffin Builder included, WooCommerce compatible. One of the biggest WordPress themes with extensive customization options."
+      "productDetails": "600+ pre-built websites, Muffin Builder included, WooCommerce compatible."
     },
     {
-      "id": 4,
       "productName": "Shopify Dawn - Modern E-commerce Template",
-      "productImgUrl": "/assets/image4.png",
+      "productPrice": 5678,
+      "categoryId": 2,
+      "productDetails": "Clean and modern Shopify theme optimized for speed and conversions.",
       "productQuantity": 12,
-      "productPrice": 45,
-      "categoryId": 2,
-      "productDetails": "Clean and modern Shopify theme optimized for speed and conversions. Features product filtering, mega menu, and mobile-first design approach."
+      "productImgUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+      "id": "4"
     },
     {
-      "id": 5,
       "productName": "Kalium - Creative Theme for Professionals",
-      "productImgUrl": "/assets/image.png",
-      "productQuantity": 18,
       "productPrice": 59,
-      "categoryId": 3,
-      "productDetails": "Portfolio and agency theme with stunning animations, multiple layout options, and premium plugins included. Perfect for creative professionals and agencies."
+      "categoryId": 1,
+      "productDetails": "Perfect for creative professionals and agencies.",
+      "productQuantity": 18,
+      "productImgUrl": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
+      "id": "5"
     },
     {
-      "id": 6,
-      "productName": "production",
-      "productImgUrl": "",
-      "categoryId": 2,
-      "productDetails": "",
-      "productQuantity": 1,
-      "productPrice": 11
-    },
-    {
-      "id":7,
-      "productName": "wordpress Template",
-      "productImgUrl": "https://blog.mailvio.com/wp-content/uploads/2022/02/Image-3_v_001-15.png",
+      "id": "7",
+      "productName": "WordPress Business Template",
+      "productImgUrl": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=600&h=400&fit=crop",
       "categoryId": 8,
-      "productDetails": "",
+      "productDetails": "Professional business template with modern design.",
       "productQuantity": 6,
       "productPrice": 7
     },
-
     {
-      "id": 1760093339199,
-      "productName": "wordpress Template",
-      "productPrice": 777777,
-      "categoryId": 1,
-      "productDetails": "wordpress Template",
-      "productQuantity": 4,
-      "productImgUrl": "https://blog.mailvio.com/wp-content/uploads/2022/02/Image-3_v_001-15.png"
+      "id": "1760113761645",
+      "productName": "React Admin Dashboard",
+      "productPrice": 7890,
+      "categoryId": 2,
+      "productDetails": "Modern React dashboard with Material-UI components.",
+      "productQuantity": 5,
+      "productImgUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
+    },
+    {
+      "id": "1760113960510",
+      "productName": "Vue.js E-commerce Template",
+      "productPrice": 8888,
+      "categoryId": 3,
+      "productDetails": "Vue.js based e-commerce template with modern UI.",
+      "productQuantity": 8,
+      "productImgUrl": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop"
     }
   ],
   "users": [
@@ -150,6 +149,27 @@
     },
     {
       "id": "b3b7",
+      "fname": "Niha",
+      "lname": "aaa",
+      "email": "hh11@gggg.com",
+      "password": "12345"
+    },
+    {
+      "id": "c8aa",
+      "fname": "Niha",
+      "lname": "aaa",
+      "email": "hh11@gggg.com",
+      "password": "12345"
+    },
+    {
+      "id": "30af",
+      "fname": "Niha",
+      "lname": "aaa",
+      "email": "hh11@gggg.com",
+      "password": "12345"
+    },
+    {
+      "id": "112c",
       "fname": "Niha",
       "lname": "aaa",
       "email": "hh11@gggg.com",

@@ -11,6 +11,7 @@ import { TemplateDrivenForm } from './components/template-driven-form/template-d
 import { ReactiveForm } from './components/reactive-form/reactive-form';
 import { authGuard } from './Guards/auth-guard';
 import { AddProduct } from './components/add-product/add-product';
+import { Cart } from './cart/cart';
 
 export const routes: Routes = [
 //routing  step1: add paths in rouets.ts
@@ -33,10 +34,13 @@ export const routes: Routes = [
         children: [
           { path: '', component: Home, title: "Home" }
         ]
-      },
+      },  { path: 'cart', component: Cart },
+
     {path:'about', component:About,title : "About Us"},
         {path:'products', component:Products,title : "Products",canActivate:[authGuard]},
-       {path:'addproduct', component:AddProduct,title : "Add New Product"},
+       {path:'products/add', component:AddProduct,title : "Add New Product"},
+       { path: 'products/edit/:id', component: AddProduct ,title : "Update Product" }
+,
 
 
   {path:'contact', component:Contact,title : "Contact Us"},
