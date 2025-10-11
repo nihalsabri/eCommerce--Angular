@@ -1,33 +1,33 @@
-<div class="d-flex" style="height: 100vh;">
-  <div class="bg-light p-3 " style="width: 250px;">
-    <h5 class=" p-3">All Categories</h5>
-    <ul class="list-unstyled ">
-      <li>
-        <a href="#" class="text-dark">Site Templates</a>
-      </li>
-      <li>
-        <a href="#" class="text-dark">UI Templates</a>
-      </li>
-      <li>
-        <a href="#" class="text-dark">eCommerce</a>
-      </li>
-         <li>
-        <a href="#" class="text-dark">Mentorship</a>
-      </li>
 
-    </ul>
-<hr>
-    <h5 class="text-center">Filter by Price</h5>
-    <div class="form-group">
-      <label for="minPrice">Min Price:</label>
-      <input type="number" id="minPrice" class="form-control" placeholder="0">
-    </div>
-    <div class="form-group">
-      <label for="maxPrice">Max Price:</label>
-      <input type="number" id="maxPrice" class="form-control" placeholder="1000">
-    </div>
-    <button class="btn btn-primary btn-block m-2">Apply Filter</button>
-  </div>
-
+<div class="bg-light h-100" style="width: 250px;">
+  <h5 class="p-3">All Categories</h5>
+  <ul class="list-unstyled px-3">
+    <li class="mb-2">
+      <a href="#" class="text-dark text-decoration-none">Site Templates</a>
+    </li>
+    <li class="mb-2">
+      <a href="#" class="text-dark text-decoration-none">UI Templates</a>
+    </li>
+    <li class="mb-2">
+      <a href="#" class="text-dark text-decoration-none">eCommerce</a>
+    </li>
+    <li class="mb-2">
+      <a href="#" class="text-dark text-decoration-none">Mentorship</a>
+    </li>
+  </ul>
   
+  <hr class="mx-3">
+  
+  <h5 class="text-center px-3">Filter by Price</h5>
+  <div class="px-3">
+    <div class="form-group mb-2">
+      <label for="minPrice" class="form-label">Min Price:</label>
+<input type="number" id="minPrice" class="form-control" placeholder="0" 
+             [(ngModel)]="minPrice">    </div>
+    <div class="form-group mb-3">
+      <label for="maxPrice" class="form-label">Max Price:</label>
+  <input type="number" id="maxPrice" class="form-control" placeholder="1000" 
+             [(ngModel)]="maxPrice">    </div>
+<button (click)="applyFilter()" class="btn btn-primary w-100 mb-3">Apply Filter</button>
+  </div>
 </div>

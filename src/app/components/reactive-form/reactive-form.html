@@ -1,69 +1,69 @@
 <!-- sign up -->
+<div class="container mt-4">
+  <div class="card shadow-sm border-0">
+    <div class="card-body p-4">
+      <h3 class="card-title text-center mb-4 text-primary">Create Account</h3>
+      
+      <form class="form-horizontal" (ngSubmit)="addNewUser()" [formGroup]="userProp">
+        <div class="form-group mb-3">
+          <label class="form-label fw-medium" for="fname">First name:</label>
+          <input type="text"
+                 class="form-control" 
+                 id="fname"
+                 placeholder="Enter first name"
+                 required
+                 name="fname"
+                 minlength="3"
+                 formControlName="fname"
+                 [ngClass]="{'is-invalid':(fnameMethod?.dirty || fnameMethod?.touched)&&fnameMethod?.invalid}">
+        </div>
 
-<form class="form-horizontal" (ngSubmit)="addNewUser()" [formGroup]="userProp">
-      <div class="form-group">
-    <label class="control-label col-sm-2" for="fname">First name:</label>
-    <div class="col-sm-10">
-      <input type="text"
-       class="form-control" 
-       id="fname"
-        placeholder="Enter first name"
-        required
-        name="fname"
-        minlength="3"
-       formControlName="fname"
-       [ngClass]="{'is-invalid':(fnameMethod?.dirty || fnameMethod?.touched)&&fnameMethod?.invalid}"
-        >
-    </div>
+        <div class="form-group mb-3">
+          <label class="form-label fw-medium" for="lname">Last name:</label>
+          <input type="text" 
+                 class="form-control" 
+                 id="lname" 
+                 placeholder="Enter last name"
+                 name="lname"
+                 minlength="3"
+                 formControlName="lname">
+        </div>
+        
+        <div class="form-group mb-3">
+          <label class="form-label fw-medium" for="email">Email:</label>
+          <input type="email" 
+                 class="form-control" 
+                 id="email" 
+                 placeholder="Enter email"
+                 formControlName="email"
+                 name="email">
+        </div>
 
-  </div>
-    <div class="form-group">
-    <label class="control-label col-sm-2" for="lname">Last name:</label>
-    <div class="col-sm-10">
-      <input type="text" 
-      class="form-control" 
-      id="lname" 
-      placeholder="Enter last name"
-    name="lname"
-    minlength="3"
-    formControlName="lname"
+        <div class="form-group mb-3">
+          <label class="form-label fw-medium" for="pwd">Password:</label>
+          <input type="password" 
+                 class="form-control" 
+                 id="pwd" 
+                 placeholder="Enter password"
+                 formControlName="password"
+                 name="password">
+        </div>
 
->
-    </div>
-    
-  </div>
-  
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="email">Email:</label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control" id="email" placeholder="Enter email"
-                    formControlName="email"
+        <div class="form-group mb-4">
+          <label class="form-label fw-medium" for="address">Address:</label>
+          <input type="text" 
+                 class="form-control" 
+                 id="address" 
+                 placeholder="Enter Address"
+                 name="address">
+        </div>
 
-              name="email"
->
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary w-100 py-2 fw-medium">
+            Create Account
+          </button>
+        </div>
+      </form>
     </div>
   </div>
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="pwd">Password:</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password"
-       formControlName="password"
-              name="password"
->
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="address">Address:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="address" placeholder="Enter Address"
-              name="address"
->
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Submit</button>
-    </div>
-  </div>
-</form>
-
+</div>

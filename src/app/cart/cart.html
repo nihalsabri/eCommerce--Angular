@@ -1,0 +1,34 @@
+
+<div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+    <button class="btn btn-outline-secondary" (click)="goBack()">← Back to Store</button>
+    <h1 class="mb-0">Shopping Cart</h1>
+    <div></div> 
+  </div>
+  <div class="d-flex mb-4">
+    <p class="mb-0 me-3">Your credit card info:</p>
+    <p class="mb-0 fw-bold">{{"1234567812341234" | cardNum}}</p>
+  </div>
+
+<table class="table table-striped">
+  <thead>
+      <th scope="col">Product Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Qunatity</th>
+      <th scope="col">Date</th>
+    <th scope="col"> Action</th>
+
+  </thead>
+<tbody>
+ @for(i of ProductList ; track i.id){
+           <tr>
+            <td>{{i.productName}}</td>
+            <td>{{i.productPrice}}</td>
+            <td>{{i.productQuantity}}</td>
+        <td>{{Ddate | date :'short'}}</td>
+            <td> <button (click)="Dec(i)">decrease</button></td>
+
+        </tr>   }
+</tbody>
+  </table>
+ </div>
