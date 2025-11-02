@@ -121,14 +121,14 @@ doDelete() {
       this.prdWithApi.deleteProduct(this.currentID).subscribe({
         next: () => {
           // alert('Product deleted successfully ');
-                    this.notificationService.showSuccess('Product deleted successfully! ✓');
+                    this.notificationService.showSuccess('Product deleted successfully ✓');
 
           this.router.navigate(['/products']);
         },
         error: (err) => {
           console.error('Error while deleting:', err);
           // alert('Error Happens');
-                    this.notificationService.showError('Error Happens!');
+        this.notificationService.showError('Error Happens');
 
         }
       });
