@@ -1,59 +1,97 @@
-# App
+# Angular E-Commerce Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.2.
+##  Overview
+A modern e-commerce application built with Angular 20, featuring product management, shopping cart functionality, and user authentication.
 
-## Development server
+##  Features
+- Product catalog with detailed views
+- Shopping cart management
+- User authentication and authorization
+- Responsive design with Angular Material
+- Form handling (both reactive and template-driven)
+- Protected routes with Guards
+- API integration for product management
 
-To start a local development server, run:
+## 🛠️ Tech Stack
+- Angular 20.2.2
+- Angular Material
+- TypeScript
+- RxJS
+- JSON Server (for backend mock)
 
+##  Installation
+
+1. Clone the repository
 ```bash
-ng serve
+git clone https://github.com/nihalsabri/eCommerce--Angular.git
+cd App
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+2. Install dependencies
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+3. Start the JSON Server (API mock)
 ```bash
-ng generate --help
+cd server
+npm install
+npm start
 ```
 
-## Building
-
-To build the project run:
-
+4. Start the Angular application (in a new terminal)
 ```bash
-ng build
+npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The application will be available at `http://localhost:4200`
 
-## Running unit tests
+##  Project Structure
+```
+src/
+├── app/
+│   ├── components/       # Reusable UI components
+│   ├── services/        # API and business logic
+│   ├── models/          # TypeScript interfaces
+│   ├── guards/          # Route guards
+│   ├── directives/      # Custom directives
+│   └── pipes/           # Custom pipes
+├── assets/             # Static files
+└── environments/       # Environment configurations
+```
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+##  Key Features Explained
 
+### Products Management
+- Browse products catalog
+- View detailed product information
+- Add/Edit products (protected by auth guard)
+- Filter and search functionality
+
+### Shopping Cart
+- Add/Remove products
+- Update quantities
+- Calculate totals
+- Persist cart data
+
+### Authentication
+- User login/signup
+- Protected routes
+- Auth state management
+- Form validations
+
+## Running Tests
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+For more information on testing, visit the [Angular Testing Guide](https://angular.dev/guide/testing).
 
-For end-to-end (e2e) testing, run:
+## Responsive Design
+The application is fully responsive and works across:
+- Desktop browsers
+- Tablets
+- Mobile devices
 
-```bash
-ng e2e
-```
+## Thank you 
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
